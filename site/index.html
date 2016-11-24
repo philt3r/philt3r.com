@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>@philt3r</title>
+    <meta name="description" content="@philt3r's site">
+
+    <link rel="icon" href="/images/icons/fav.ico">
+
+    <!-- See https://goo.gl/OOhYW5 -->
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- See https://goo.gl/qRE0vM -->
+    <meta name="theme-color" content="#3f51b5">
+
+    <!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="@philt3r">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="My App">
+
+    <!-- Homescreen icons -->
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="96x96" href="/images/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/icons/icon-192x192.png">
+
+    <!-- Tile icon for Windows 8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#3f51b5">
+    <meta name="msapplication-tap-highlight" content="no">
+
+    <script src="./bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/polymer/polymer.html">
+    <link rel="import" href="./bower_components/app-layout/app-toolbar/app-toolbar.html">
+    <link rel="import" href="./bower_components/app-layout/app-scroll-effects/effects/parallax-background.html">
+    <link rel="import" href="./bower_components/app-layout/app-box/app-box.html">
+
+    <style is="custom-style">
+        body {
+            margin: 0;
+            font-family: 'Roboto', 'Noto', sans-serif;
+            background-color: #eee;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: white;
+            height: 128px;
+        }
+
+        app-toolbar {
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 5px;
+            text-align: center;
+            color: #1a237e;
+        }
+
+        .nav {
+            height: 64px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .nav a {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 64px;
+            text-decoration: none;
+            color: black;
+            font-weight: 300;
+            margin: 0 10px;
+        }
+
+        .nav a:hover {
+            color: #444;
+            border-bottom: 1px solid #999;
+        }
+
+        [threshold-triggered] {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1;
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+
+        .first, .second, .third, .fourth {
+            height: 640px;
+            --app-box-background-front-layer: {
+                background-image: url(images/conscious-bubble.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .second {
+            --app-box-background-front-layer: {
+                background-image: url(images/dragon-2016.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .third {
+            --app-box-background-front-layer: {
+                background-image: url(images/philt3r_main_room.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .fourth {
+            --app-box-background-front-layer: {
+                background-image: url(//app-layout-assets.appspot.com/assets/bg4.jpg);
+                background-position: bottom;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        section {
+            padding-top: 10px;
+        }
+
+        article {
+            font-weight: 100;
+            max-width: 500px;
+            text-align: justify;
+            margin: 0 auto 100px auto;
+        }
+
+        article h2 {
+            text-align: center;
+            font-weight: 100;
+            font-size: 50px;
+            margin: 5px;
+        }
+
+        article p {
+            font-size: 18px;
+            line-height: 30px;
+            padding-left: 2px;
+            padding-right: 2px;
+        }
+
+        article hr {
+            width: 100px;
+            height: 1px;
+            border: none;
+            margin: 20px auto;
+            background-color: black;
+        }
+    </style>
+</head>
+<body class="fullbleed" unresolved>
+
+<header>
+    <app-toolbar>
+        <div main-title>@philt3r</div>
+    </app-toolbar>
+    <app-box threshold="64">
+        <ul role="navigation" class="nav">
+            <li><a href="#bio">Bio</a></li>
+            <li><a href="#releases">Releases</a></li>
+            <li><a href="#mixes">Mixes</a></li>
+        </ul>
+    </app-box>
+</header>
+
+<main>
+    <section id="bio">
+        <app-box class="first" effects="parallax-background"></app-box>
+        <article>
+            <p>@philt3r, is not a metaphor for a side affect, but rather a side affect of a metamorphosis. For a decade,
+                he has planted smiles and swivelled dials along that great stretch of party paradise that is the
+                east-coast of Australia and his sets end up spanning more genres than a well thought out German street
+                parade.
+                With a penchant for proggy psy and wobbly tech, @philt3r can read a crowd better than airport security,
+                and take them further up than their overpriced tickets. But that's what we like about @philt3r, his lack
+                of tickets, on himself. A regular on the festival scene, he is playing Festivals inc Burning Seed,
+                Squared Senses, earthcore, Dragon Dreaming, Local Produce, ShipReKt, Rainbow Serpent and Psyland, along
+                with club gigs across states. So get your 'boogie' on with @philt3r at your next compulsory escape from
+                reality.
+                @philt3r’s debut EP - Full Circle and new single "Conscious Bubble is now on Ohmtap Records!!
+                http://omtap.bandcamp.com/</p>
+        </article>
+    </section>
+
+    <section id="releases">
+        <article>
+            <hr/>
+            <h2>Releases</h2>
+            <hr/>
+            <iframe style="border: 0; width: 100%; height: 570px;"
+                    src="https://bandcamp.com/EmbeddedPlayer/album=459552727/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                    seamless><a href="http://omtap.bandcamp.com/album/philt3r-conscious-bubble-conscious-bubble-rmxs">@Philt3r
+                - Conscious-Bubble - Conscious-Bubble RMXS by @Philt3r</a></iframe>
+            <iframe style="border: 0; width: 100%; height: 570px;"
+                    src="https://bandcamp.com/EmbeddedPlayer/album=1444226974/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
+                    seamless><a href="http://omtap.bandcamp.com/album/philt3r-full-circle-e-p">@Philt3r - Full Circle - E.P
+                by @Philt3r</a></iframe>
+        </article>
+        <app-box class="second" effects="parallax-background"></app-box>
+    </section>
+
+    <section id="mixes">
+        <article>
+            <hr/>
+            <h2>Mixes</h2>
+            <hr/>
+        </article>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fgalactivation-2016-katgirl-vs-philt3r%2F&light=1" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Ftinyville-gangsters-ball-2016-fat-techno%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fcabin-crew-records-24-moons-ep-debut%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fkatgirl-and-philt3r-psyland-2016%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fpsyland-2016-bit-of-120-126-bpm-techno%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fpirainia-space-odessey-2016%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fcaptain-palette-pirates-mermaids%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Frainbow-serpent-festival-2015-bromo-dragonfly-set%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Flocal-produce-2015%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fearthcore-2015%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fdragon-dreaming-earth-stage-2015%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fsquared-senses-2015-prog-psy%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fmem-friday-night-pelicans-in-persia%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Freclamation-warehouse-party-1%2F" frameborder="0"></iframe>
+        <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fthursdays-after-work-at-bluestone-003_1%2F" frameborder="0"></iframe>
+        </article>
+
+        <app-box class="third" effects="parallax-background"></app-box>
+    </section>
+</main>
+
+</body>
+</html>
