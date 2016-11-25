@@ -11,5 +11,6 @@ script:
 - npm install -g firebase-tools
 - cd site && bower install
 - sleep 5
+- cd ..
 after_success:
 - ./firebase_deploy.sh $TRAVIS_BRANCH $FIREBASE_PROJECT_PHIL $FIREBASE_TOKEN_PHIL $FIREBASE_TOKEN_PROD $FIREBASE_PROJECT_PROD
