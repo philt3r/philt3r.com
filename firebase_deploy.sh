@@ -1,20 +1,10 @@
 #!/bin/bash
 
 TRAVIS_BRANCH=$1
-FIREBASE_PROJECT_PHIL=$2
-FIREBASE_TOKEN_PHIL=$3
-FIREBASE_PROJECT_PROD=$4
-FIREBASE_TOKEN_PROD=$5
+FIREBASE_PROJECT_PROD=$2
+FIREBASE_TOKEN_PROD=$3
 
-# Test the branch and deploy where needed
-if [[ ${TRAVIS_BRANCH} == *"feature"* ]]
-then
-	echo "Feature branch does not get deployed to firebase"
-elif [[ ${TRAVIS_BRANCH} == *"develop"* ]]
-then
-	echo "Deploy to dev firebase environment"
-	firebase deploy --debug --project "${FIREBASE_PROJECT_PHIL}" --token "${FIREBASE_TOKEN_PHIL}"
-elif [[ ${TRAVIS_BRANCH} == *"master"* ]]
+if [[ ${TRAVIS_BRANCH} == *"master"* ]]
 then
 	echo "Master branch deploy to production"
 	firebase deploy --debug --project "${FIREBASE_PROJECT_PROD}" --token "${FIREBASE_TOKEN_PROD}"
