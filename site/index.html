@@ -52,7 +52,7 @@
 
         header {
             background-color: white;
-            height: 128px;
+            height: 120px;
         }
 
         app-toolbar {
@@ -64,7 +64,7 @@
         }
 
         .nav {
-            height: 64px;
+            height: 48px;
             margin: 0;
             padding: 0;
             text-align: center;
@@ -78,11 +78,11 @@
 
         .nav a {
             display: inline-block;
-            font-size: 12px;
-            line-height: 64px;
+            font-size: 16px;
+            line-height: 48px;
             text-decoration: none;
             color: black;
-            font-weight: 300;
+            font-weight: bolder;
             margin: 0 10px;
         }
 
@@ -101,13 +101,16 @@
             backdrop-filter: saturate(180%) blur(20px);
         }
 
-        .first, .second, .third, .fourth {
+        .first, .second, .third {
             height: 640px;
+        }
+
+        .first {
             --app-box-background-front-layer: {
                 background-image: url(images/conscious-bubble.jpg);
-                background-position: bottom;
+                background-position: top;
                 padding-bottom: 120px;
-                margin-top: -20px;
+                margin-top: 10px;
                 height: 100%;
             };
         }
@@ -115,7 +118,7 @@
         .second {
             --app-box-background-front-layer: {
                 background-image: url(images/dragon-2016.jpg);
-                background-position: bottom;
+                background-position: top;
                 padding-bottom: 120px;
                 margin-top: -20px;
                 height: 100%;
@@ -125,17 +128,7 @@
         .third {
             --app-box-background-front-layer: {
                 background-image: url(images/philt3r_main_room.jpg);
-                background-position: bottom;
-                padding-bottom: 120px;
-                margin-top: -20px;
-                height: 100%;
-            };
-        }
-
-        .fourth {
-            --app-box-background-front-layer: {
-                background-image: url(//app-layout-assets.appspot.com/assets/bg4.jpg);
-                background-position: bottom;
+                background-position: top;
                 padding-bottom: 120px;
                 margin-top: -20px;
                 height: 100%;
@@ -143,17 +136,17 @@
         }
 
         section {
-            padding-top: 10px;
+            padding-top: 48px;
         }
 
         article {
             font-weight: 100;
-            max-width: 500px;
+            max-width: 900px;
             text-align: justify;
             margin: 0 auto 100px auto;
         }
 
-        article h2 {
+        h2 {
             text-align: center;
             font-weight: 100;
             font-size: 50px;
@@ -167,8 +160,8 @@
             padding-right: 2px;
         }
 
-        article hr {
-            width: 100px;
+        hr {
+            width: 150px;
             height: 1px;
             border: none;
             margin: 20px auto;
@@ -180,7 +173,7 @@
 
 <header>
     <app-toolbar>
-        <div main-title>@philt3r</div>
+        <div main-title>@philt3r - 0417301024</div>
     </app-toolbar>
     <app-box threshold="64">
         <ul role="navigation" class="nav">
@@ -193,6 +186,8 @@
 
 <main>
     <section id="bio">
+        <h2>Bio</h2>
+        <hr/>
         <app-box class="first" effects="parallax-background"></app-box>
         <article>
             <p>@philt3r, is not a metaphor for a side affect, but rather a side affect of a metamorphosis. For a decade,
@@ -212,7 +207,6 @@
 
     <section id="releases">
         <article>
-            <hr/>
             <h2>Releases</h2>
             <hr/>
             <iframe style="border: 0; width: 100%; height: 570px;"
@@ -228,11 +222,8 @@
     </section>
 
     <section id="mixes">
-        <article>
-            <hr/>
-            <h2>Mixes</h2>
-            <hr/>
-        </article>
+        <h2>Mixes</h2>
+        <hr/>
         <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fgalactivation-2016-katgirl-vs-philt3r%2F&light=1" frameborder="0"></iframe>
         <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Ftinyville-gangsters-ball-2016-fat-techno%2F" frameborder="0"></iframe>
         <iframe width="100%" height="400" src="https://www.mixcloud.com/widget/iframe/?feed=https%3A%2F%2Fwww.mixcloud.com%2Fphilt3r%2Fcabin-crew-records-24-moons-ep-debut%2F" frameborder="0"></iframe>
