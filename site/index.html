@@ -105,11 +105,12 @@
             height: 640px;
             max-width: 700px;
             display:block;margin:0 auto;
+            padding-bottom: 100%; height: 0;
         }
 
         .first {
             --app-box-background-front-layer: {
-                background-image: url(images/conscious-bubble.jpg);
+                background-image: url(images/profile-pic.jpg);
                 background-position: top;
                 padding-bottom: 120px;
                 margin-top: 10px;
@@ -129,7 +130,7 @@
 
         .third {
             --app-box-background-front-layer: {
-                background-image: url(images/philt3r_main_room.jpg);
+                background-image: url(images/psyland-2017-mixing.jpg);
                 background-position: top;
                 padding-bottom: 120px;
                 margin-top: -20px;
@@ -138,13 +139,17 @@
         }
 
         section {
-            padding-top: 48px;
+            padding-top: 28px;
             max-width: 700px;
             display:block;margin:0 auto;
         }
 
-        .bandcamp {
-            display:block;margin:0 auto;
+        .embed-container { 
+            position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; 
+        } 
+
+        .embed-container iframe, .embed-container object, .embed-container embed { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
         }
 
         article {
@@ -215,16 +220,14 @@
     <section id="releases">
             <h2>Releases</h2>
             <hr/>
-            <div class="bandcamp">
             <h3>Conscious Bubble - Techno includes 3 Remixes</h3>
-            <iframe style="border: 0; width: 100%; height: 570px; max-width: 700px"
-                    src="https://bandcamp.com/EmbeddedPlayer/album=459552727/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-                    seamless><a href="http://omtap.bandcamp.com/album/philt3r-conscious-bubble-conscious-bubble-rmxs">@Philt3r
+            <div class="embed-container">
+            <iframe frameborder="0" src="https://bandcamp.com/EmbeddedPlayer/album=459552727/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://omtap.bandcamp.com/album/philt3r-conscious-bubble-conscious-bubble-rmxs">@Philt3r
                 - Conscious-Bubble - Conscious-Bubble RMXS by @Philt3r</a></iframe>
+            </div>
             <h3>Full Circle - Progressive Psytrance EP</h3>
-            <iframe style="border: 0; width: 100%; height: 570px;"
-                    src="https://bandcamp.com/EmbeddedPlayer/album=1444226974/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/"
-                    seamless><a href="http://omtap.bandcamp.com/album/philt3r-full-circle-e-p">@Philt3r - Full Circle - E.P
+            <div class="embed-container">
+            <iframe frameborder="0" src="https://bandcamp.com/EmbeddedPlayer/album=1444226974/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless><a href="http://omtap.bandcamp.com/album/philt3r-full-circle-e-p">@Philt3r - Full Circle - E.P
                 by @Philt3r</a></iframe>
             </div>
         <app-box class="second" effects="parallax-background"></app-box>
