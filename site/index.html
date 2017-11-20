@@ -102,7 +102,7 @@
             backdrop-filter: saturate(180%) blur(20px);
         }
 
-        .first, .second, .third, .fourth, .fifth {
+        .first, .second, .third, .fourth, .fifth, .sixth {
             height: 640px;
             max-width: 700px;
             display:block;margin:0 auto;
@@ -150,6 +150,16 @@
         }
 
         .fifth {
+            --app-box-background-front-layer: {
+                background-image: url(images/massive-crowd.jpg);
+                background-position: top;
+                padding-bottom: 120px;
+                margin-top: -20px;
+                height: 100%;
+            };
+        }
+
+        .sixth {
             --app-box-background-front-layer: {
                 background-image: url(images/Loving-it-on-stage-Boaz.jpg);
                 background-position: top;
@@ -287,11 +297,13 @@
         <app-box class="third" effects="parallax-background"></app-box>
         <app-box class="fourth" effects="parallax-background"></app-box>
         <app-box class="fifth" effects="parallax-background"></app-box>
+        <app-box class="sixth" effects="parallax-background"></app-box>
         <h2>Credits</h2>
         <hr/>
         <ul class="nav">
             <li><a href="https://www.facebook.com/peter.niven1">Peter Niven</a></li>
             <li><a href="https://www.facebook.com/photosbyboaz/">Boaz</a></li>
+            <li><a href="https://www.facebook.com/corinnewood84/">Corinne</a></li>
         </ul>
     </section>
 </main>
