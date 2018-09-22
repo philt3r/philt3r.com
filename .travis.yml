@@ -13,4 +13,5 @@ script:
 - sleep 5
 - cd ..
 after_success:
-- ./firebase_deploy.sh $TRAVIS_BRANCH $FIREBASE_TOKEN_PROD $FIREBASE_PROJECT_PROD
+  - ./firebase login --reauth
+  - ./firebase_deploy.sh $TRAVIS_BRANCH $FIREBASE_TOKEN_PROD $FIREBASE_PROJECT_PROD
