@@ -12,6 +12,10 @@ script:
 - cd site && bower install
 - sleep 5
 - cd ..
-after_success:
-  - ./firebase login --reauth
-  - ./firebase_deploy.sh $TRAVIS_BRANCH $FIREBASE_TOKEN_PROD $FIREBASE_PROJECT_PROD
+deploy:
+  provider: firebase
+  project: 'philt3r-db9f7'
+  edge: true
+env:
+  global:
+    secure: Q7FQMaKhPff8NFY5kepyVpFAjbr8sC3nlH0RHfAMGrVDI+F9HyemADCxjQevh3zEPtNR/2itgFwoamVwrA7q78Ltr2cWJcO33HOtjYjWtAK/YAZVx8gxl42cEaEsXyHcUK8sIywr4AWq6GDKAtb8ffYZOdUSNTvGdf3ID6Jx35cG1szEqPGX453f7fIOWu2ydnjCrKxAfx9YeHco/UoJbgxODE1XTY8Z1hLMAU/VDAgo6AS+INC51pPjS4l70QmJuFDr6n4T5lT9NHpajykT7KNmkqY5MOAAcb+NQtA4cfuwAD2jbW6DElItZVNLHt8UBjoOSTdyS35Jb5q3VRzPUj3BDAJxT9mnYeoFSRt1fStahxDcOfQFmBDUUN2KG6OYj/ONeWEro3/iP5n5v/ZgcP2ylhn5zVerArscbPe2MuXo3F3Zk7W9EcBg6UwMybItd5YMuXs+MjNnD+/PBvFiLfx0nPdxA3CoPzOHkEYc49ao9L24tromdDP+iLinO5qJfju0IYr3SJa49s+o4vVAwJD3Yd8cn0x5y6D/dqnj9re50HncAMvydAR8JFtLql2OrUih8Cam7MvQ9b8tEvX2k38oW/nm5+ZtQ8hSWbWr1zf0yLzEvu7voI+8pXmbBunCcatpYN5+QhUYdpjBH9OKY0bhiw3SnsAyR1am31ZdoQk=
